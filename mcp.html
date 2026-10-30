@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Deep guide to MCP (Model Context Protocol) and its role in reliable agent harnesses." />
+    <title>MCP guide — Harness</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="tool-page">
+    <div class="noise"></div>
+    <header class="site-header">
+      <a class="brand" href="index.html"><span class="brand-mark"><span></span><span></span><span></span></span><span>harness<span class="brand-dot">.</span></span></a>
+      <nav class="nav" aria-label="Main navigation"><a href="index.html#how-it-works">How it works</a><a href="index.html#mcp">MCP</a><a href="index.html#skills">Skills</a><a href="directory.html">Directory</a><a href="index.html#blueprint">Blueprint</a></nav>
+      <a class="header-cta" href="index.html">Back home <span>↩</span></a>
+    </header>
+
+    <main>
+      <section class="tool-hero section-shell">
+        <a class="back-link" href="index.html#mcp">← Back to overview</a>
+        <div class="section-tag">MCP / Deep guide</div>
+        <h1>Model Context Protocol</h1>
+        <p class="tool-summary">MCP is a standard for connecting models to external capabilities. For a harness, it is the contract that turns ad-hoc tool prompting into a structured, portable, and auditable action layer.</p>
+        <div class="tool-meta"><span>Protocol layer</span><span>Tool discovery + invocation + results</span></div>
+      </section>
+
+      <section class="tool-body section-shell">
+        <div class="tool-main">
+          <div class="detail-block"><div class="section-tag">What MCP is</div><p>MCP defines a common interface between clients (IDEs, terminals, apps, harness runtimes) and servers that expose tools, resources, and prompts. Instead of every harness inventing custom request formats, MCP lets them speak one consistent protocol. That consistency is what enables reusable integrations across ecosystems.</p></div>
+          <div class="detail-block"><div class="section-tag">Why it matters for harnesses</div><p>An agent harness succeeds or fails based on how safely and reliably it can act. MCP improves this by making tool contracts explicit, schema-driven, and machine-readable. Planning gets better because the model can inspect capability metadata. Execution gets safer because calls are validated against declared input shapes. Review gets easier because each call and response is captured as a first-class protocol event.</p></div>
+          <div class="detail-columns">
+            <div class="detail-block">
+              <div class="section-tag">Core primitives</div>
+              <ul>
+                <li><strong>Tools:</strong> callable actions such as search, file edits, shell commands, or API operations.</li>
+                <li><strong>Resources:</strong> structured context the model can read (documents, state snapshots, configuration).</li>
+                <li><strong>Prompts:</strong> reusable prompt templates that standardize recurring workflows.</li>
+                <li><strong>Schemas:</strong> typed parameter/result contracts that reduce ambiguity and runtime errors.</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <div class="section-tag">Harness-level benefits</div>
+              <ul>
+                <li><strong>Interoperability:</strong> one tool server can be consumed by multiple clients and models.</li>
+                <li><strong>Portability:</strong> swap model vendors without rebuilding your integration layer.</li>
+                <li><strong>Governance:</strong> centralize permissions, logging, and policy checks around tool access.</li>
+                <li><strong>Velocity:</strong> add capabilities quickly by plugging in servers instead of writing one-off glue.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="detail-block"><div class="section-tag">How MCP fits the agent loop</div><p>During <em>orient</em>, the harness loads available MCP servers and tool manifests. During <em>decide</em>, the model chooses a tool call based on declared capabilities and constraints. During <em>act</em>, the client sends a validated invocation to the server. During <em>reflect</em>, the harness parses structured results, updates state, and decides whether to continue, recover, or stop. This keeps the loop legible and reduces hidden prompt behavior.</p></div>
+          <div class="detail-block"><div class="section-tag">Operational design guidance</div><p>Good MCP integration is not just wiring transport. Keep servers narrowly scoped by domain, require explicit permission boundaries, enforce timeouts and retry policies, and treat tool output as untrusted input that still needs validation. Add observability around call latency, failure modes, and retry decisions so your harness can adapt and operators can audit behavior.</p></div>
+          <div class="detail-block"><div class="section-tag">Common failure modes</div><p>Most reliability issues come from over-broad tool permissions, weak schema definitions, and missing result validation. Another common issue is treating MCP as autonomy by itself; it is only the interface. The harness still needs planning quality, stop conditions, safety policies, and evaluation criteria to produce dependable outcomes.</p></div>
+        </div>
+        <aside class="tool-aside">
+          <div class="aside-card price-card"><div class="section-tag">Quick definition</div><h2>MCP is the standard interface between models and external capabilities.</h2><p>It does not replace reasoning or evaluation; it improves the quality and safety of tool integration.</p></div>
+          <div class="aside-card"><div class="section-tag">Design checklist</div><h3>Discoverable · Typed · Observable</h3><p>If a capability cannot be discovered, validated, or audited, it is not production-ready for an agent harness.</p></div>
+          <a class="source-link" href="skills.html">Continue to Skills ↗</a>
+        </aside>
+      </section>
+
+      <section class="tool-bottom">
+        <div class="section-shell">
+          <div class="section-tag">Next step</div>
+          <h2>Use MCP to expose capabilities.<br /><em>Use skills to apply them well.</em></h2>
+          <a class="button button-dark" href="skills.html">Read the Skills guide <span>→</span></a>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer section-shell"><a class="brand" href="index.html"><span class="brand-mark"><span></span><span></span><span></span></span><span>harness<span class="brand-dot">.</span></span></a><p>Make the loop legible.</p><span class="footer-meta">A field guide for builders · 2026</span></footer>
+    <script src="script.js"></script>
+  </body>
+</html>

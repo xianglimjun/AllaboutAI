@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Deep guide to skills in agent harnesses and how skills help complete tasks reliably." />
+    <title>Skills guide — Harness</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="tool-page">
+    <div class="noise"></div>
+    <header class="site-header">
+      <a class="brand" href="index.html"><span class="brand-mark"><span></span><span></span><span></span></span><span>harness<span class="brand-dot">.</span></span></a>
+      <nav class="nav" aria-label="Main navigation"><a href="index.html#how-it-works">How it works</a><a href="index.html#mcp">MCP</a><a href="index.html#skills">Skills</a><a href="directory.html">Directory</a><a href="index.html#blueprint">Blueprint</a></nav>
+      <a class="header-cta" href="index.html">Back home <span>↩</span></a>
+    </header>
+
+    <main>
+      <section class="tool-hero section-shell">
+        <a class="back-link" href="index.html#skills">← Back to overview</a>
+        <div class="section-tag">Skills / Deep guide</div>
+        <h1>Skills in a harness</h1>
+        <p class="tool-summary">Skills are reusable capability packages that combine instructions, tools, constraints, and completion criteria for a specific type of job. They make task execution more reliable than one universal prompt.</p>
+        <div class="tool-meta"><span>Execution layer</span><span>Task routing + specialization + safety</span></div>
+      </section>
+
+      <section class="tool-body section-shell">
+        <div class="tool-main">
+          <div class="detail-block"><div class="section-tag">What a skill is</div><p>A skill is a pre-defined way of doing work inside the harness. It usually includes a domain-specific objective, curated toolset, step order, guardrails, and output format. In practice, skills function like operational playbooks the model can execute repeatedly with less drift.</p></div>
+          <div class="detail-block"><div class="section-tag">How skills help complete tasks</div><p>Skills improve completion by reducing ambiguity at the moment of action. Instead of letting the model invent a workflow each time, the harness routes the request to a tested pattern. This improves speed, consistency, and safety while lowering token waste from unnecessary exploration.</p></div>
+          <div class="detail-columns">
+            <div class="detail-block">
+              <div class="section-tag">What skills package</div>
+              <ul>
+                <li><strong>Intent framing:</strong> what success looks like for this task category.</li>
+                <li><strong>Allowed actions:</strong> which tools are available and which are blocked.</li>
+                <li><strong>Execution policy:</strong> order of operations, retries, and stop conditions.</li>
+                <li><strong>Output contract:</strong> required structure, evidence, and verification checks.</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <div class="section-tag">Harness outcomes</div>
+              <ul>
+                <li><strong>Higher reliability:</strong> fewer hallucinated steps and fewer malformed outputs.</li>
+                <li><strong>Better safety:</strong> high-risk actions stay gated inside approved workflows.</li>
+                <li><strong>Faster delivery:</strong> specialized context shortens decision time per loop.</li>
+                <li><strong>Easier evaluation:</strong> repeated task types can be measured against stable criteria.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="detail-block"><div class="section-tag">Skill lifecycle in the loop</div><p>At intake, the harness classifies the request and selects a skill. During planning, the chosen skill narrows context and tool choices. During execution, the harness enforces that skill’s policies and sequencing. During reflection, results are checked against the skill’s completion rubric. If requirements are unmet, the skill defines recovery behavior or escalation paths.</p></div>
+          <div class="detail-block"><div class="section-tag">Examples of useful skill families</div><p>Common skill groups include coding change execution, research synthesis with citations, incident triage, workflow automation, and policy-aware content operations. Each family can expose different tool budgets, approval requirements, and validation steps while still using the same base harness runtime.</p></div>
+          <div class="detail-block"><div class="section-tag">Design principles for strong skills</div><p>Keep each skill narrow enough to be predictable, but broad enough to handle normal edge cases. Define explicit inputs and outputs, include robust failure handling, and make verification mandatory before completion. Treat skills as versioned assets: test them, measure real task outcomes, and retire ones that underperform.</p></div>
+        </div>
+        <aside class="tool-aside">
+          <div class="aside-card price-card"><div class="section-tag">Quick definition</div><h2>Skills are reusable task playbooks that the harness can execute safely and consistently.</h2><p>They convert generic model ability into repeatable operational capability.</p></div>
+          <div class="aside-card"><div class="section-tag">Selection rule</div><h3>Right skill, right scope</h3><p>Route by task type and risk level. The best model cannot compensate for the wrong execution policy.</p></div>
+          <a class="source-link" href="mcp.html">Read the MCP guide ↗</a>
+        </aside>
+      </section>
+
+      <section class="tool-bottom">
+        <div class="section-shell">
+          <div class="section-tag">Next step</div>
+          <h2>Give the harness shared tools.<br /><em>Then give it specialized skills.</em></h2>
+          <a class="button button-dark" href="directory.html">Explore harness examples <span>→</span></a>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer section-shell"><a class="brand" href="index.html"><span class="brand-mark"><span></span><span></span><span></span></span><span>harness<span class="brand-dot">.</span></span></a><p>Make the loop legible.</p><span class="footer-meta">A field guide for builders · 2026</span></footer>
+    <script src="script.js"></script>
+  </body>
+</html>
